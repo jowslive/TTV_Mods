@@ -1,0 +1,6 @@
+<%= simple_form_for @bot do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo %>
+  <%= link_to 'Back', bots_path, class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>
