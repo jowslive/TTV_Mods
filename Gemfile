@@ -29,8 +29,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails'
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'font-awesome-sass'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-twitch'
 gem 'pundit'
 gem 'simple_form'
 
