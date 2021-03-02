@@ -14,7 +14,7 @@ class BotPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    return true if user.admin
   end
 
   def edit?

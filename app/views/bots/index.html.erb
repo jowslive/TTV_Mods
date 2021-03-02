@@ -1,3 +1,5 @@
 <% @bots.each do |bot| %>
-  <h1><%= bot.name %></h1>
+  <h1>
+    <%= bot.name %>---<%= bot.photo %><%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
+  </h1>
 <% end %>

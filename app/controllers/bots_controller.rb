@@ -33,12 +33,15 @@ class BotsController < ApplicationController
 
   # Lista um form de edicao
   def edit
+    set_user
+    authorize @bot
   end
 
   # Acao de Update
   def update
+    authorize @bot
     if @bot.update(bot_params)
-      redirect_to bot_path(@bot)
+      redirect_to bots_path
     else
       render :new
     end
