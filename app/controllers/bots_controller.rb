@@ -47,6 +47,17 @@ class BotsController < ApplicationController
     end
   end
 
+  def destroy
+    set_user
+    set_bot
+    authorize @bot
+    if @bot.destroy
+      redirect_to bots_path, notice: 'Bot excluído'
+    else
+      redirect_to bots_path, notice: 'Você não tem permissão'
+    end
+  end
+
   private
 
   def bot_params
