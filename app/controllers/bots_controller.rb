@@ -49,6 +49,7 @@ class BotsController < ApplicationController
     end
   end
 
+  # Deleta um bot
   def destroy
     set_user
     set_bot
@@ -62,14 +63,17 @@ class BotsController < ApplicationController
 
   private
 
+  # Parametros necessarios para salvar um bot
   def bot_params
     params.require(:bot).permit(:name, :photo)
   end
 
+  # Define um bot
   def set_bot
     @bot = Bot.find(params[:id])
   end
 
+  # Define o user da sessao
   def set_user
     @user = current_user
   end

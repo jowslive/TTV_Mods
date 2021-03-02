@@ -27,26 +27,43 @@ class ConfigsController < ApplicationController
     end
   end
 
+  # Edita uma config
   def edit
     set_user
     authorize @config
   end
 
-  private
-
-  def set_user
-    @user = current_user
+  # Deleta uma config
+  def destroy
+    set_user
+    set_config
+    authorize @config
+    if @config.destroy
+      redirect_to bot_path(@bot.id), notice: 'Bot excluído'
+    else
+      redirect_to bot_path(@bot.id), notice: 'Você não tem permissão'
+    end
   end
 
+  private
+
+  # Parametros necessarios para salvar uma config
   def config_params
     params.require(:config).permit(:name, :content)
   end
 
+  # Define um bot
   def set_bot
     @bot = Bot.find(params[:bot_id])
   end
 
+  # Define uma config
   def set_config
     @config = Config.find(params[:id])
+  end
+
+  # Define o user da sessao
+  def set_user
+    @user = current_user
   end
 end
