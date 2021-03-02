@@ -39,7 +39,7 @@ class BotsController < ApplicationController
     authorize @bot
   end
 
-  # Acao de Update
+  # Acao de Update do bot
   def update
     authorize @bot
     if @bot.update(bot_params)
