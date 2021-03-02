@@ -1,0 +1,5 @@
+<h1><%= @bot.name %></h1> | 
+<% @configs.each do |config| %>
+  <h4>- <%= config.name %> <%= link_to "✏️ Editar config", edit_bot_config_path(config.id) %></h4>
+<% end %>
+<%= link_to "✅ Criar config", new_bot_config_path(@bot.id) %>

@@ -9,6 +9,8 @@ class BotsController < ApplicationController
 
   # Lista um Bot
   def show
+    authorize @bot
+    @configs = Config.where(bot_id: @bot.id)
   end
 
   # Lista um form de cadastro

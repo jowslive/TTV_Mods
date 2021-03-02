@@ -6,7 +6,11 @@ class BotPolicy < ApplicationPolicy
   end
 
   def index?
-    return true if user.admin
+    return true
+  end
+
+  def show?
+    return true
   end
 
   def new?
