@@ -25,7 +25,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", user_twitch_omniauth_authorize_path , class: "btn btn-primary text-white me-3", method: :post %>
+          <%= link_to "Login with Twitch", new_user_session_path, class: "btn btn-primary text-white me-3", method: :post %>
         </li>
       <% end %>
     </ul>

@@ -5,8 +5,9 @@ class User < ApplicationRecord
   has_many :favorites
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[twitch]
+         :recoverable, :rememberable, :validatable
+
+  devise :omniauthable, omniauth_providers: [:twitch]
 
   validates :email, presence: true
   validates :encrypted_password, presence: true
@@ -22,7 +23,15 @@ class User < ApplicationRecord
       user.nickname = auth.info.nickname # assuming the user model has an image
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
-      user.skip_confirmation!
+      # user.skip_confirmation!
+    end
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"] && user.email.blank?
+        user.email = data["email"]
+      end
     end
   end
 end
