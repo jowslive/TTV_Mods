@@ -1,5 +1,5 @@
 <% @bots.each do |bot| %>
   <h1>
-    <%= bot.name %>---<%= bot.photo %><%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
+    <%= bot.name %>---<%= bot.photo %><%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %><%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
   </h1>
 <% end %>
