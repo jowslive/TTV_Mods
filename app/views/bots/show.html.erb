@@ -1,5 +1,11 @@
-<h1><%= @bot.name %></h1> | 
+<h1 class="text-center">
+  <%= @bot.name %>
+</h1>
 <% @configs.each do |config| %>
-  <h4>- <%= config.name %> <%= link_to "✏️ Editar config", edit_bot_config_path(config.id) %></h4>
+  <h4> 
+     <%= config.name %> 
+     <%= link_to "✏️ Editar config", edit_bot_config_path({ id: config.id, bot_id: @bot.id }) %>
+     <%= link_to "🗑️ Excluir config", config_path({ id: config.id, bot_id: @bot.id }), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
+  </h4>
 <% end %>
-<%= link_to "✅ Criar config", new_bot_config_path(@bot.id) %>
+<h4><%= link_to "✅ Criar config", new_bot_config_path(@bot.id), class: "btn btn-primary text-white" %></h4>
