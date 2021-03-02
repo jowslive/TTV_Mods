@@ -27,6 +27,16 @@ class ConfigsController < ApplicationController
     end
   end
 
+  # Acao de Update da config
+  def update
+    authorize @config
+    if @config.update(config_params)
+      redirect_to bot_path(@bot)
+    else
+      render :new
+    end
+  end
+
   # Edita uma config
   def edit
     set_user
