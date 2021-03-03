@@ -2,11 +2,15 @@
   TODOS BOTS
 </h1>
 <% @bots.each do |bot| %>
-  <h1><%= bot.name %>---<%= bot.photo %></h1>
+  <h1>
+    <%= bot.name %> - <small><%= bot.photo %></small>
+  </h1>
   <h4>
     <%= link_to "👁️ Mostrar bot", bot_path(bot.id) %>
     <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
     <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
   </h4>
-  <h4><%= link_to "Criar bot", new_bot_path, class: "btn btn-primary text-white" %></h4>
 <% end %>
+<h4>
+  <%= link_to "Criar bot", new_bot_path, class: "btn btn-primary text-white" %>
+</h4>
