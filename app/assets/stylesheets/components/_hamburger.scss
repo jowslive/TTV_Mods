@@ -1,0 +1,12 @@
+.custom-hamburger {
+  height:100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*hides nav behind content */
+  z-index: 0;
+  /*get rid of color gap on top of menu*/
+  margin-top: 0;
+}

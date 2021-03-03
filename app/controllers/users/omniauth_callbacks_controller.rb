@@ -1,6 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # See https://github.com/omniauth/omniauth/wiki/FAQ#rails-session-is-clobbered-after-callback-on-developer-strategy
-  skip_before_action :verify_authenticity_token, only: :twitch
 
   def twitch
     # You need to implement the method below in your model (e.g. app/models/user.rb)
@@ -11,7 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: "Twitch") if is_navigational_format?
     else
       session["devise.twitch_data"] = auth_hash.except(:extra) # Removing extra as it can overflow some session stores
-      redirect_to new_user_registration_url
+      redirect_to root_path
     end
   end
 

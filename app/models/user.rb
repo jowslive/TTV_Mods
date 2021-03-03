@@ -19,19 +19,11 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      user.name = auth.info.name # assuming the user model has a name
-      user.nickname = auth.info.nickname # assuming the user model has an image
-      # If you are using confirmable and the provider(s) you use validate emails,
-      # uncomment the line below to skip the confirmation emails.
-      # user.skip_confirmation!
-    end
-  end
-
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"] && user.email.blank?
-        user.email = data["email"]
-      end
+      user.nickname = auth.info.nickname
+      user.image = auth.info.image
+      user.view_count = auth.extra.raw_info.view_count
+      user.uid = auth.uid
+      user.provider = auth.provider
     end
   end
 end

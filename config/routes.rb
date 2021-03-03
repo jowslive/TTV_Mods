@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :create, :destroy]
 
   # Rota de Login Twitch
-  # get '/auth/twitch/callback' => 'sessions#create'
+  get '/auth/twitch/callback' => 'sessions#create'
 
   # Pagina Inicial
   root to: 'pages#home'
