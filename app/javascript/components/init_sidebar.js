@@ -1,3 +1,4 @@
+// Função que mostra o menu lateral ou o oculta
 export const menuToggler = () => {
   document.getElementById("custom_menu").addEventListener("click", (event) => {
     let menu = document.querySelector('.menu-close');

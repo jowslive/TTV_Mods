@@ -1,16 +1,22 @@
-<h1 class="text-center">
-  TODOS BOTS
-</h1>
-<% @bots.each do |bot| %>
-  <h1>
-    <%= bot.name %> - <small><%= bot.photo %></small>
+<div class="menu-open">
+  <h1 class="text-center">
+    TODOS BOTS
   </h1>
+  <% @bots.each do |bot| %>
+    <h1>
+      <%= bot.name %> - <small><%= bot.photo %></small>
+    </h1>
+    <h4>
+      <%= link_to "👁️ Mostrar bot", bot_path(bot.id) %>
+      <% if policy(@bots).edit? %>
+        <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
+        <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
+      <% end %>
+    </h4>
+  <% end %>
   <h4>
-    <%= link_to "👁️ Mostrar bot", bot_path(bot.id) %>
-    <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
-    <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
+    <% if policy(@bots).new? %>
+      <%= link_to "Criar bot", new_bot_path, class: "btn btn-primary text-white" %>
+    <% end %>
   </h4>
-<% end %>
-<h4>
-  <%= link_to "Criar bot", new_bot_path, class: "btn btn-primary text-white" %>
-</h4>
+</div>

@@ -1,6 +1,8 @@
-<%= simple_form_for [@bot, @config] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :content %>
-  <%= link_to 'Back', bot_path(params[:bot_id]), class: 'btn btn-primary' %>
-  <%= f.submit class: 'btn btn-success' %>
-<% end %>
+<div class="menu-open">
+  <%= simple_form_for [@bot, @config] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :content %>
+    <%= link_to 'Back', bot_path(params[:bot_id]), class: 'btn btn-primary' %>
+    <%= f.submit class: 'btn btn-success' %>
+  <% end %>
+</div>
