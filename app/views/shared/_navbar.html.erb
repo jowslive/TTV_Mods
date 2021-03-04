@@ -1,4 +1,4 @@
-<div class="navbar navbar-lewagon navbar-dark bg-dark py-0 mb-1">
+<div class="navbar navbar-lewagon navbar-dark bg-dark py-2 mb-1">
   
   <button class="navbar-toggler z-index-999 border-0 ms-3" type="button" id="custom_menu" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,10 @@
       </li>
     <% else %>
       <li class="nav-item">
-        <%= link_to "Login with Twitch", user_twitch_omniauth_authorize_path, class: "btn custom-btn-purple text-white me-3", method: :post %>
+        <%= link_to user_twitch_omniauth_authorize_path, class: "btn custom-btn-purple text-white me-3", method: :post do %>
+          <i class="fab fa-twitch"></i>
+          Login with Twitch
+        <% end %>
       </li>
     <% end %>
   </ul>
