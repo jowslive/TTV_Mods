@@ -1,30 +1,41 @@
-<div class="menu-close">
-  <div class="card-container d-flex justify-content-around flex-wrap w-100 mt-5">
+<div class="menu-close homepage">
+  <div>
+    <p class="main-header text-center"> 
+      TTV MODS 
+    </p>
+    <p class="sub-header text-center"> 
+      A plataforma para os moderadores e streamers da Twitch
+    </p>
+  </div>
+  <div class="d-flex justify-content-around custom-margin-top-homepage-small">
     <div class="row w-100">
       <div class="col-md-3 d-flex justify-content-center mb-5 card-p-0">
-        <div class="card custom-card bordered-card">
-          <div class="card-body custom-card-body">
-            <div class="d-flex justify-content-between"> 
-              <img class="custom-card-image" src="https://i.imgur.com/3j4e0aB.jpg">
-            </div>
-          </div>
-        </div>
-      </div>
-      <% @bots.each do |bot| %>
-        <div class="col-md-3 d-flex justify-content-center mb-5 card-p-0" >
+        <a href="<%= bots_path %>">
           <div class="card custom-card bordered-card">
             <div class="card-body custom-card-body">
               <div class="d-flex justify-content-between"> 
-                <%= image_tag bot.photo, class: "custom-card-image" %>
+                <img class="custom-card-image" src="https://i.imgur.com/3j4e0aB.jpg">
               </div>
             </div>
           </div>
+        </a>
+      </div>
+      <% @bots.first(3).each do |bot| %>
+        <div class="col-md-3 d-flex justify-content-center mb-5 card-p-0" >
+          <a href="<%= bot_path(bot) %>">
+            <div class="card custom-card bordered-card">
+              <div class="card-body custom-card-body">
+                <div class="d-flex justify-content-between"> 
+                  <%= image_tag bot.photo, class: "custom-card-image" %>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
       <% end %>
     </div>
   </div>
-
-  <div class="container-card-configs d-flex justify-content-around custom-margin-top-homepage">
+  <div class="d-flex justify-content-around custom-margin-top-homepage-large">
     <div class="d-flex justify-content-center align-items-center flex-column">
       <%= image_tag "settings.svg", class:'icons-homepage'%>
       <div class="card-body">
@@ -47,7 +58,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <script>
