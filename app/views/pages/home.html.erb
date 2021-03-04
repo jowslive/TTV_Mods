@@ -1,6 +1,20 @@
 <div class="menu-close">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+  <div class="wrapper">
+    <div class="zoom-effect-container">
+      <div class="image-card">
+          <img src="https://i.imgur.com/3j4e0aB.jpg">
+      </div>
+    </div>
+    <% @bots.each do |bot|%>
+    
+      <div class="zoom-effect-container">
+        <div class="image-card">
+            <%= image_tag bot.photo %>
+        </div>
+      </div>
+      
+    <% end %>  
+  </div>
 </div>
 
 <script>
