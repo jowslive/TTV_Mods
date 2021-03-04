@@ -4,8 +4,7 @@ class User < ApplicationRecord
   has_many :bots
   has_many :favorites
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :rememberable
 
   devise :omniauthable, omniauth_providers: [:twitch]
 
