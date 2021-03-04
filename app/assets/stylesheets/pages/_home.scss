@@ -1,7 +1,22 @@
 // Specific CSS for your home-page
-.custom-margin-top-homepage {
-  margin-top: 150px;
+.custom-margin-top-homepage-small {
+  margin-top: 7.5em;
+}
+.custom-margin-top-homepage-large {
+  margin-top: 5em;
 }
 .icons-homepage {
   width: 70px;
+}
+.main-header {
+  color: white;
+  font-weight: bold;
+  font-size: 56px;
+}
+.sub-header {
+  font-weight: bold;
+  font-size: 24px;
+}
+.homepage {
+  padding: 0 !important;
 }
