@@ -1,6 +1,6 @@
 class ConfigsController < ApplicationController
   before_action :set_config, only: %i[edit update]
-  before_action :set_bot, only: %i[index new create destroy]
+  before_action :set_bot, only: %i[create destroy edit index new update]
 
   # Listagem de todas as configs
   def index
@@ -27,20 +27,20 @@ class ConfigsController < ApplicationController
     end
   end
 
-  # Acao de Update da config
-  def update
-    authorize @config
-    if @config.update(config_params)
-      redirect_to bot_path(@bot)
-    else
-      render :new
-    end
-  end
-
   # Edita uma config
   def edit
     set_user
     authorize @config
+  end
+
+  # Acao de Update da config
+  def update
+    authorize @config
+    if @config.update(config_params)
+      redirect_to bot_path(params[:bot_id])
+    else
+      render :new
+    end
   end
 
   # Deleta uma config
