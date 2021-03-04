@@ -1,7 +1,6 @@
 /* Cards */
 .custom-card {
   width: 15vw;
-  border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   &:hover {
@@ -10,26 +9,19 @@
     transform: scale(1.08);
   }
 }
-
 .custom-card-image {
   width: 100%;
   height: 30vh;
   object-fit: fill;
+  border-radius: 2px;
 }
-
 .custom-card-body {
   padding: 0 !important;
 }
-
-.card-p-0 {
-  padding: 0 !important;
-}
-
 .bordered-card {
-  --borderWidth: 5px;
+  --borderWidth: 3px;
   border-radius: var(--borderWidth);
 }
-
 .bordered-card:after {
   content: '';
   position: absolute;
@@ -43,7 +35,6 @@
   animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
 }
-
 @keyframes animatedgradient {
 	0% {
 		background-position: 0% 50%;
@@ -55,7 +46,12 @@
 		background-position: 0% 50%;
 	}
 }
-
+.card {
+  border: 0 !important;
+}
+.card-p-0 {
+  padding: 0 !important;
+}
 
 /* Cards de users */
 #cards_landscape_wrap-2{
@@ -127,16 +123,4 @@
   font-family: 'Roboto Black', sans-serif;
   letter-spacing: 1px;
   color: #805fb4;
-}
-  
-.icon-config {
-  width: 70px;
-}
-
-.teste {
-  margin-top: 150px;
-}
-
-.card {
-  border: 0 !important;
 }
