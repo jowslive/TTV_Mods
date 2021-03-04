@@ -1,2 +1,24 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="menu-open">
+  <h1 class="mb-5 text-center"> Conheça nossos usuários \o/ </h1>
+  <div id="cards_landscape_wrap-2">
+    <div class="row d-flex justify-content-center">
+      <% @users.each do |user| %>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
+          <a href="https://twitch.tv/<%= user.nickname %>" target="_blank">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <%= image_tag user.image %>
+                </div>
+                <div class="text-container">
+                  <h6><%= user.nickname %></h6>
+                  <p><i class="fab fa-twitch me-1"></i><%= user.view_count %></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
