@@ -37,7 +37,7 @@
   left: calc(-1 * var(--borderWidth));
   height: calc(100% + var(--borderWidth) * 2);
   width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #4eb553, #5cc25f, #6ad06b, #77dd77, #84ea83, #92f890, #9fff9c, #b8ffb5);
+  background: linear-gradient(60deg, #482c7d, #5e39a3, #784bcc, #986ee6, #af8eed, #c4adf0);
   border-radius: calc(2 * var(--borderWidth));
   z-index: -1;
   animation: animatedgradient 3s ease alternate infinite;
@@ -55,6 +55,7 @@
 		background-position: 0% 50%;
 	}
 }
+
 
 /* Cards de users */
 #cards_landscape_wrap-2{
@@ -126,4 +127,16 @@
   font-family: 'Roboto Black', sans-serif;
   letter-spacing: 1px;
   color: #805fb4;
+}
+  
+.icon-config {
+  width: 70px;
+}
+
+.teste {
+  margin-top: 150px;
+}
+
+.card {
+  border: 0 !important;
 }
