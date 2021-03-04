@@ -6,10 +6,10 @@ class FavoritePolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    user
   end
 
   def destroy?
-    return true
+    user && user.id == record.user_id
   end
 end

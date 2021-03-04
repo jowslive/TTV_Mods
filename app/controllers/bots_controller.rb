@@ -1,6 +1,6 @@
 class BotsController < ApplicationController
   before_action :set_bot, only: %i[edit show update]
-  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   # Listagem de todos os Bots
   def index
@@ -59,6 +59,10 @@ class BotsController < ApplicationController
     else
       redirect_to bots_path, notice: 'Você não tem permissão'
     end
+  end
+
+  def favorite
+    set_user
   end
 
   private
