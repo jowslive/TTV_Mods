@@ -9,10 +9,12 @@
         <%= link_to "✏️ Editar config", edit_bot_config_path({ id: config.id, bot_id: @bot.id }) %>
         <%= link_to "🗑️ Excluir config", config_path({ id: config.id, bot_id: @bot.id }), method: 'DELETE', data: { confirm: 'Você tem certeza?' } %>
       <% end %>
-      <% if Favorite.find_by(config_id: config.id, user_id: current_user).present? %>
-        <%= link_to "❌ DesFavoritar config", favorite_path(config), method: 'DELETE', data: { confirm: 'Você tem certeza?' } %>
-      <% else %>
-        <%= link_to "⭐ Favoritar config", favorites_path(config), method: 'POST' %>
+      <% if policy(@bot).favorite? %>
+        <% if Favorite.find_by(config_id: config.id, user_id: current_user).present? %>
+          <%= link_to "❌ DesFavoritar config", favorite_path(config), method: 'DELETE', data: { confirm: 'Você tem certeza?' } %>
+        <% else %>
+          <%= link_to "⭐ Favoritar config", favorites_path(config), method: 'POST' %>
+        <% end %>
       <% end %>
     </h4>
   <% end %>

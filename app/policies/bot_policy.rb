@@ -6,30 +6,26 @@ class BotPolicy < ApplicationPolicy
   end
 
   def index?
-    return true
+    true
   end
 
   def show?
-    return true
-  end
-
-  def new?
-    return true if user.admin
+    true
   end
 
   def create?
-    return true if user.admin
-  end
-
-  def edit?
-    return true if user.admin
+    user&.admin?
   end
 
   def update?
-    return true if user.admin
+    user&.admin?
   end
 
   def destroy?
-    return true if user.admin
+    user&.admin?
+  end
+
+  def favorite?
+    user
   end
 end
