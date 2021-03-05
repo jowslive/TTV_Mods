@@ -15,7 +15,12 @@
             </div>
           </div>
         </a>
+        
       </div>
+      <% if policy(@bots).edit? %>
+          <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
+          <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
+        <% end %>  
     <% end %>
   </div>
 
