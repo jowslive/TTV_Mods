@@ -1,19 +1,24 @@
 <div class="menu-open">
   <h1 class="text-center">
-    TODOS BOTS
+    TODOS OS BOTS
   </h1>
-  <% @bots.each do |bot| %>
-    <h1>
-      <%= bot.name %> - <small><%= bot.photo %></small>
-    </h1>
-    <h4>
-      <%= link_to "👁️ Mostrar bot", bot_path(bot.id) %>
-      <% if policy(@bots).edit? %>
-        <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
-        <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
-      <% end %>
-    </h4>
-  <% end %>
+  
+  <div class="d-flex my-5">
+    <% @bots.each do |bot| %>
+      <div class="col-md-3 d-flex justify-content-center mb-5 card-p-0" >
+        <a href="<%= bot_path(bot) %>">
+          <div class="card custom-card bordered-card">
+            <div class="card-body custom-card-body">
+              <div class="d-flex justify-content-between"> 
+                <%= image_tag bot.photo, class: "custom-card-image" %>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+
   <h4>
     <% if policy(@bots).new? %>
       <%= link_to "Criar bot", new_bot_path, class: "btn btn-primary text-white" %>
