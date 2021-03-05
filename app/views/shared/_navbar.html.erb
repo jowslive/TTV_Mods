@@ -12,9 +12,9 @@
             <%= image_tag current_user.image, class: "avatar" %>
           </button>
           <ul class="dropdown-menu dropdown-menu-dark position-absolute" aria-labelledby="navbarDropdown">
-            <%= link_to "All Bots", bots_path, class: "dropdown-item" %>
-            <%= link_to "All Users", users_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Todos Bots", bots_path, class: "dropdown-item" %>
+            <%= link_to "Todos Usuários", users_path, class: "dropdown-item" %>
+            <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </ul>
         </div>
       </li>
@@ -22,7 +22,7 @@
       <li class="nav-item py-2">
         <%= link_to user_twitch_omniauth_authorize_path, class: "btn custom-btn-purple text-white me-3", method: :post do %>
           <i class="fab fa-twitch"></i>
-          Login with Twitch
+          Entre com a Twitch
         <% end %>
       </li>
     <% end %>
