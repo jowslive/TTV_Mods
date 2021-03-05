@@ -25,16 +25,18 @@ a = User.new(email: "kayo.richard2000@gmail.com",
              uid: "146693571")
 a.save!
 
-streamelementsBot = Bot.new(name: "Stream Elements", photo: "https://i.imgur.com/cgJdUcG.jpg", user_id: u.id)
+streamelementsBot = Bot.new(name: "Stream Elements", photo: "https://i.imgur.com/rEJ8giw.png", user_id: u.id)
 streamelementsBot.save!
-mooBot = Bot.new(name: "Moobot", photo: "https://i.imgur.com/0gEKUbL.jpg", user_id: u.id)
+mooBot = Bot.new(name: "Moobot", photo: "https://i.imgur.com/InmzpSl.png", user_id: u.id)
 mooBot.save!
-nightBot = Bot.new(name: "Nightbot", photo: "https://i.imgur.com/MYDijOk.jpg", user_id: u.id)
+nightBot = Bot.new(name: "Nightbot", photo: "https://i.imgur.com/hWdObQT.jpg", user_id: u.id)
 nightBot.save!
+raidshieldBot = Bot.new(name: "Raid Shield Bot", photo: "https://i.imgur.com/OFVQPgL.jpg", user_id: u.id)
+raidshieldBot.save!
 
 streamelementsConfig = Config.create!(name: "!eloLoL", 
                                    content: "$(leagueoflegends 'nick aqui' br)", 
-                               description: "Mostra o elo no LoL do jogador definido.",
+                               description: "Mostra o elo no LoL do jogador definido",
                                     bot_id: streamelementsBot.id)
 streamelementsConfig = Config.create!(name: "!setgame", 
                                    content: '${setgame "<game>"}', 
@@ -42,9 +44,17 @@ streamelementsConfig = Config.create!(name: "!setgame",
                                     bot_id: streamelementsBot.id)
 mooBotConfig = Config.create!(name: "!Title", 
                            content: "Acesse o seu Dashboard em https://moo.bot/ , procure 'Built-in commands' e ative o !Title", 
-                       description: "Você e seus moderadores poderão mudar o título da transmissão.",
+                       description: "Você e seus moderadores poderão mudar o título da transmissão",
                             bot_id: mooBot.id)
 nightBotConfig = Config.create!(name: "!game", 
-                             content: "Acesse o seu dashboard em https://nightbot.tv/commands/default e ative o comando clicando em 'Enable'.", 
-                         description: "Irá retornar o jogo que o streamer está transmitindo.",
+                             content: "Acesse o seu dashboard em https://nightbot.tv/commands/default e ative o comando clicando em 'Enable'", 
+                         description: "Irá retornar o jogo que o streamer está transmitindo",
                               bot_id: nightBot.id)
+raidshieldBotConfig = Config.create!(name: "!rsb check", 
+                                  content: "Para ativar este comando, é necessário ter entrado em contato com a equipe de suporte RaidShield", 
+                              description: "Irá retornar se o bot está atualmente ativo no canal ou não",
+                                   bot_id: raidshieldBot.id)
+raidshieldBotConfig = Config.create!(name: "!rsb equipe", 
+                                  content: "Para ativar este comando, é necessário ter entrado em contato com a equipe de suporte RaidShield", 
+                              description: "Irá retornar a equipe responsável pela manutenção do RaidShield",
+                                   bot_id: raidshieldBot.id)
