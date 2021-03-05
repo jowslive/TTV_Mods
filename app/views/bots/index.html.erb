@@ -3,25 +3,29 @@
     TODOS OS BOTS
   </h1>
   
-  <div class="d-flex my-5">
-    <% @bots.each do |bot| %>
-      <div class="col-md-3 d-flex justify-content-center mb-5 card-p-0" >
-        <a href="<%= bot_path(bot) %>">
-          <div class="card custom-card bordered-card">
-            <div class="card-body custom-card-body">
-              <div class="d-flex justify-content-between"> 
-                <%= image_tag bot.photo, class: "custom-card-image" %>
+  <div class="d-flex flex-wrap justify-content-around my-5">
+    <div class="row w-100">
+      <% @bots.each do |bot| %>
+        <div class="col-md-3 d-flex justify-content-center mb-5 card-p-0" >
+          <a href="<%= bot_path(bot) %>">
+            <div class="card custom-card bordered-card">
+              <div class="card-body custom-card-body">
+                <div class="d-flex justify-content-between"> 
+                  <%= image_tag bot.photo, class: "custom-card-image" %>
+                </div>
+                <% if policy(@bots).edit? %>
+                  <div class="text-center">
+                    <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
+                    <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
+                  </div>
+                <% end %>  
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
         
-      </div>
-      <% if policy(@bots).edit? %>
-          <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
-          <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
-        <% end %>  
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
   <h4>
