@@ -1,9 +1,12 @@
 <div class="navbar navbar-lewagon navbar-dark bg-dark py-0 mb-1">
-  
-  <button class="navbar-toggler z-index-999 border-0 ms-3" type="button" id="custom_menu" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+  <div class="d-flex">
+    <button class="navbar-toggler z-index-999 border-0 ms-3" type="button" id="custom_menu" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <%= link_to root_path do %>
+      <%= image_tag 'ttvlogo.png', class: "main-logo ms-3" %>
+    <% end %>
+  </div>
   <ul class="navbar-nav">
     <% if user_signed_in? %>
       <li class="nav-item dropdown justify-content-end me-3">
@@ -13,6 +16,7 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark position-absolute" aria-labelledby="navbarDropdown">
             <%= link_to "Bots", bots_path, class: "dropdown-item" %>
+            <%= link_to "Favoritos", favorites_path, class: "dropdown-item" %>
             <%= link_to "Usuários", users_path, class: "dropdown-item" %>
             <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </ul>
@@ -28,7 +32,6 @@
     <% end %>
   </ul>
 </div>
-
 <div class="collapse custom-hamburger bg-dark w-20 show fade" id="navbarToggleExternalContent">
 </div>
 

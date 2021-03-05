@@ -1,4 +1,8 @@
 class FavoritesController < ApplicationController
+  def index
+    @favorites = Favorite.where(user_id: current_user.id)
+  end
+
   def create
     @favorite = Favorite.new(favorite_params)
     @favorite.config_id = params[:config_id]
