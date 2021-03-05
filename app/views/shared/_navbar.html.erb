@@ -12,8 +12,8 @@
             <%= image_tag current_user.image, class: "avatar" %>
           </button>
           <ul class="dropdown-menu dropdown-menu-dark position-absolute" aria-labelledby="navbarDropdown">
-            <%= link_to "Todos Bots", bots_path, class: "dropdown-item" %>
-            <%= link_to "Todos Usuários", users_path, class: "dropdown-item" %>
+            <%= link_to "Bots", bots_path, class: "dropdown-item" %>
+            <%= link_to "Usuários", users_path, class: "dropdown-item" %>
             <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </ul>
         </div>
