@@ -1,0 +1,5 @@
+favoriteConfig = document.getElementById("favorite-<%= @favorite.config.id %>");
+link = `<%= link_to config_favorites_path(@favorite.config), method: 'POST', remote: "true" do %>
+          <div class="HeartAnimation"></div>
+        <% end %>`;
+favoriteConfig.innerHTML = link;

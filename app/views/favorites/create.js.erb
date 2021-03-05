@@ -1,0 +1,5 @@
+favoriteConfig = document.getElementById("favorite-<%= params[:config_id] %>");
+link = `<%= link_to favorite_path(@favorite), method: 'DELETE', remote: "true" do %>
+                <div class="HeartAnimation animate" ></div>
+              <% end %>`;
+favoriteConfig.innerHTML = link;

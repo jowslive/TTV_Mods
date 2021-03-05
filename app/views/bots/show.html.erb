@@ -2,22 +2,47 @@
   <h1 class="text-center">
     <%= @bot.name %>
   </h1>
-  <% @configs.each do |config| %>
-    <h4> 
-      <%= config.name %> 
-      <% if policy(@bot).edit? %>
-        <%= link_to "✏️ Editar config", edit_bot_config_path({ id: config.id, bot_id: @bot.id }) %>
-        <%= link_to "🗑️ Excluir config", config_path({ id: config.id, bot_id: @bot.id }), method: 'DELETE', data: { confirm: 'Você tem certeza?' } %>
-      <% end %>
-      <% if policy(@bot).favorite? %>
-        <% if Favorite.find_by(config_id: config.id, user_id: current_user).present? %>
-          <%= link_to "❌ DesFavoritar config", favorite_path(config), method: 'DELETE', data: { confirm: 'Você tem certeza?' } %>
-        <% else %>
-          <%= link_to "⭐ Favoritar config", favorites_path(config), method: 'POST' %>
+  <h5 class="text-white p-3 mb-3 mt-2 text-break" style="text-align: justify;text-justify: inter-word; line-height: 34px;">
+    <%= @bot.introduction %>
+  </h5>
+
+  <table class="table table-dark table-hover table-borderless rounded">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Conteúdo</th>
+        <th scope="col">Descrição</th>
+        <% if policy(@bot).favorite? %>
+          <th scope="col" class="text-center">Favoritar</th>
         <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% i = 0 %>
+      <% @configs.each do |config| %>
+        <tr>
+          <th scope="row"><%= i += 1 %></th>
+          <td><%= config.name %></td>
+          <td><%= config.content %></td>
+          <td><%= config.description %></td>
+          <% if policy(@bot).favorite? %>
+            <td class="text-center" id="favorite-<%= config.id %>">
+              <% if favorite = Favorite.find_by(config_id: config.id, user_id: current_user) %>
+                <%= link_to favorite_path(favorite), method: 'DELETE', remote: "true" do %>
+                  <div class="HeartAnimation animate" ></div>
+                <% end %>
+              <% else %>
+                <%= link_to config_favorites_path(config), method: 'POST', remote: "true" do %>
+                  <div class="HeartAnimation"></div>
+                <% end %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
       <% end %>
-    </h4>
-  <% end %>
+    </tbody>
+  </table>
   <h4>
     <% if policy(@configs).create? %>
       <%= link_to "✅ Criar config", new_bot_config_path(@bot.id), class: "btn btn-primary text-white" %>
