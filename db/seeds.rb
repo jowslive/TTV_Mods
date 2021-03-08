@@ -35,12 +35,13 @@ streamelementsBot = Bot.new(name: "Stream Elements",
                                    StreamElements está na nuvem, então sua configuração de stream pode ser acessada de qualquer lugar ou qualquer dispositivo.", 
                          user_id: u.id)
 streamelementsBot.save!
-mooBot = Bot.new(name: "Moobot", 
-                photo: "https://i.imgur.com/InmzpSl.png",
-         introduction: "Com apenas alguns cliques, o Moobot pode começar a automatizar várias tarefas tediosas para você, 
-                        removendo comportamentos indesejáveis ​​no chat ​​e incentivando o envolvimento e a lealdade de sua comunidade no Twitch.",
-              user_id: u.id)
-mooBot.save!
+priestBot = Bot.new(name: "Priestbot", 
+                   photo: "https://i.imgur.com/JyfhY1A.jpg", 
+            introduction: "O PriestBot é o chatbot brasileiro de moderação desenvolvido para ser usado na Twitch.O suporte é feito tanto pela Twitch quanto pelo Discord.
+                           Você precisa atender a pelo menos UM dos dois requisitos para a utilização deste bot. 
+                           1- Média de 3+ viewers nos últimos 7 dias. Ter no mínimo 6 streams em 14 dias (sem reruns e testes).", 
+                 user_id: u.id)
+priestBot.save!
 nightBot = Bot.new(name: "Nightbot", 
                   photo: "https://i.imgur.com/hWdObQT.jpg", 
            introduction: "Nightbot é um bot de bate-papo para Twitch e YouTube que permite automatizar o bate-papo de sua transmissão ao vivo com moderação e novos recursos,
@@ -54,13 +55,12 @@ raidshieldBot = Bot.new(name: "Raid Shield Bot",
 															 O bot automaticamente bane qualquer usuário que possa ter envolvimento com os ataques nocivos.",
 										 user_id: u.id)
 raidshieldBot.save!
-priestBot = Bot.new(name: "Priestbot", 
-                   photo: "https://i.imgur.com/JyfhY1A.jpg", 
-            introduction: "O PriestBot é o chatbot brasileiro de moderação desenvolvido para ser usado na Twitch.O suporte é feito tanto pela Twitch quanto pelo Discord.
-                           Você precisa atender a pelo menos UM dos dois requisitos para a utilização deste bot. 
-                           1- Média de 3+ viewers nos últimos 7 dias. Ter no mínimo 6 streams em 14 dias (sem reruns e testes).", 
-                 user_id: u.id)
-priestBot.save!
+mooBot = Bot.new(name: "Moobot", 
+                photo: "https://i.imgur.com/InmzpSl.png",
+         introduction: "Com apenas alguns cliques, o Moobot pode começar a automatizar várias tarefas tediosas para você, 
+                        removendo comportamentos indesejáveis ​​no chat ​​e incentivando o envolvimento e a lealdade de sua comunidade no Twitch.",
+              user_id: u.id)
+mooBot.save!
 # --------------
 # CONFIGS
 # --------------
@@ -85,22 +85,6 @@ streamelementsConfig = Config.create!(name: "!followage",
 streamelementsConfig = Config.create!(name: "!points", 
                                    content: "$(user) tem $(user.points) $(pointsname) e está classificado em $(user.points_rank) na tabela de classificação", 
                                description: "Este comando retorna o número de pontos do usuário na loja do bot StreamElements",
-                                    bot_id: streamelementsBot.id)
-streamelementsConfig = Config.create!(name: "!commands", 
-                                   content: "$(https://StreamElements.com/${channel.alias}/commands)", 
-                               description: "Você pode encontrar uma lista de todos os comandos aqui",
-                                    bot_id: streamelementsBot.id)
-streamelementsConfig = Config.create!(name: "!followage", 
-                                   content: "${user1} tem seguido ${user2} por 1 ano 5 meses 27 dias 1 hora", 
-                               description: "Permite ver o tempo no qual você é seguidor do canal",
-                                    bot_id: streamelementsBot.id)
-streamelementsConfig = Config.create!(name: "!points", 
-                                   content: "$(user) tem $(user.points) $(pointsname) e está classificado em $(user.points_rank) na tabela de classificação", 
-                               description: "Este comando retorna o número de pontos do usuário na loja do bot StreamElements",
-                                    bot_id: streamelementsBot.id)
-streamelementsConfig = Config.create!(name: "!song", 
-                                   content: "Música atual: harambe.waw - GANHAMOS ZULUL [2m3s] solicitado por nuuls https://youtu.be/9OG-Qr1qAe4", 
-                               description: "Este comando retorna a música atual e o usuário que adicionou a playlist",
                                     bot_id: streamelementsBot.id)
 streamelementsConfig = Config.create!(name: "!song", 
                                    content: "Música atual: harambe.waw - GANHAMOS ZULUL [2m3s] solicitado por nuuls https://youtu.be/9OG-Qr1qAe4", 
