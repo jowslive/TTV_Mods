@@ -6,6 +6,14 @@
     <%= link_to root_path do %>
       <%= image_tag 'ttvlogo.png', class: "main-logo ms-3" %>
     <% end %>
+    <%= form_tag results_path, class: "d-flex ms-4", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control me-2",
+        placeholder: "Pesquisar"
+      %>
+      <%= submit_tag "Pesquisar", class: "btn btn-outline-light" %>
+    <% end %>
   </div>
   <ul class="navbar-nav">
     <% if user_signed_in? %>
