@@ -3,10 +3,10 @@
     <table class="table table-dark table-hover table-responsive table-borderless rounded">
       <thead>
         <tr>
-          <th scope="col">Bot</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Conteúdo</th>
-          <th scope="col">Descrição</th>
+          <th scope="col" class="w-10">Bot</th>
+          <th scope="col" class="w-10">Nome</th>
+          <th scope="col" style="width:30%;">Conteúdo</th>
+          <th scope="col" class="w-50">Descrição</th>
           <% if policy(@favorites.first.config.bot).favorite? %>
             <th scope="col" class="text-center">Favoritar</th>
           <% end %>

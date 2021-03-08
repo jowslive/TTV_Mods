@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :configs, only: [:destroy] do 
     resources :favorites, only: [:create]
   end
+  # Rota de Search
+  resources :results, only: :index
   # Rotas de Favorites
   resources :favorites, only: [:index, :destroy]
   # Rotas de Users
