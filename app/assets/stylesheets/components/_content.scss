@@ -2,7 +2,7 @@
   min-width: 100%;
   min-height: 100%;
   position: relative;
-  top: 0;
+  top: 58px;
   bottom: 100%;
   left: 0;
   z-index: 1;
@@ -14,7 +14,7 @@
   max-width: 80%;
   min-height: 100%;
   position: relative;
-  top: 0;
+  top: 58px;
   bottom: 100%;
   left: 20%;
   z-index: 1;
@@ -29,4 +29,10 @@
 
 .z-index-999{
   z-index: 999;
+}
+
+.custom-text-justify {
+  text-align: justify;
+  text-justify: inter-word; 
+  line-height: 34px;
 }

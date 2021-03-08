@@ -3,6 +3,6 @@ class UsersController < ApplicationController
   before_action :verify_policy_scoped, only: [:index]
 
   def index
-    @users = User.all
+    @users = User.all.order(view_count: :DESC)
   end
 end
