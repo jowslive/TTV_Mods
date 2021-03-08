@@ -1,11 +1,83 @@
+/* Barra lateral */
 .custom-hamburger {
-  height:100vh;
+  height: 100vh;
   position: fixed;
-  top: 0;
+  top: 3.6em;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   margin-top: 0;
   box-shadow: 5px 0 5px -5px #6441a5;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  font-size: 22px;
+  margin-top: 0.75em;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+/* Componente accordion */
+.accordion-button:not(.collapsed) {
+  background-color: initial;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.hamburgerItem {
+  display: block;
+}
+
+.hamburgerItemActive{
+  display: block;
+  background: rgba(255,255,255,0.2);
+  &:hover {
+    background-color: #444444;
+  }
+}
+
+.hamburgerHref {
+  color: #999999;
+  text-decoration: none;
+  width: 100%;
+}
+
+.hamburgerHrefActive {
+  color: white !important;
+  text-decoration: none;
+  width: 100%;
 }

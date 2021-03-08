@@ -1,0 +1,46 @@
+<div class="collapse custom-hamburger bg-dark w-20 show fade" id="navbarToggleExternalContent">
+  <ul class="sidebar-nav" id="hamburgerBotsList">
+    <li class="sidebar-brand">
+      <p class="text-white">
+        TTV Mods
+      </p>
+    </li>
+    <% @bots.each do |bot| %>
+      <li>
+        <div class="accordion-item <%= request.env["PATH_INFO"] == bot_path(bot).to_s ? "hamburgerItemActive" : "hamburgerItem" %>">
+          <h5 class="accordion-header" >
+            <div class="d-flex align-items-center">
+              <%= link_to bot.name, 
+                    bot_path(bot),
+                    class: request.env["PATH_INFO"] == bot_path(bot).to_s ? "hamburgerHrefActive" : "hamburgerHref",
+                    remote: false %>
+              <button class="accordion-button w-25 <%= request.env["PATH_INFO"] == bot_path(bot).to_s ? "" : "collapsed" %>" 
+                      type="button"
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#collapseBot<%= bot.id %>" 
+                      aria-expanded="false"
+                      style="border: 0;">
+              </button>
+            </div>
+          </h5>
+          <div id="collapseBot<%= bot.id %>" class="accordion-collapse collapse <%= request.env["PATH_INFO"] == bot_path(bot).to_s ? "show" : "" %>">
+            <div class="accordion-body bg-dark">
+              <div class="d-flex flex-column">
+                <%= link_to "Introdução", 
+                    bot_path(bot, anchor: "bot_introduction"),
+                    class: "text-decoration-none",
+                    remote: false %>
+                <%= link_to "Configurações", 
+                    bot_path(bot, anchor: "bot_configs"),
+                    class: "text-decoration-none",
+                    remote: false %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+

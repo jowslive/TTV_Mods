@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
   before_action :authenticate_user!
+  before_action :all_bots
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -21,5 +22,9 @@ class ApplicationController < ActionController::Base
 
   def verify_policy_scoped
     true
+  end
+
+  def all_bots
+    @bots = Bot.all
   end
 end
