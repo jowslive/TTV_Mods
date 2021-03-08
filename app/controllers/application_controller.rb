@@ -25,6 +25,6 @@ class ApplicationController < ActionController::Base
   end
 
   def all_bots
-    @bots = Bot.all
+    @bots = policy_scope(Bot).all.order(name: :asc)
   end
 end

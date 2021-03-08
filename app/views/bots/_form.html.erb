@@ -1,7 +1,9 @@
 <div class="menu-open">
   <%= simple_form_for @bot do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo %>
+    <%= f.input :name, label: 'Nome do Bot' %><br>
+    <!-- <%= f.rich_text_area :rich_introduction, label: 'Introdução' %><br> -->
+    <%= f.input :rich_introduction, as: :rich_text_area, label: 'Introdução', required: true %>
+    <%= f.input :photo, label: 'Foto (URL)' %>
     <%= link_to 'Back', bots_path, class: 'btn btn-primary' %>
     <%= f.submit class: 'btn btn-success' %>
   <% end %>

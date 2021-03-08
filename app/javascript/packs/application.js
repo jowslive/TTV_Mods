@@ -36,3 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   backgroundAnimation();
   menuToggler();
 });
+
+require("trix")
+require("@rails/actiontext")

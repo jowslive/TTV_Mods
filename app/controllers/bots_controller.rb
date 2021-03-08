@@ -2,11 +2,6 @@ class BotsController < ApplicationController
   before_action :set_bot, only: %i[edit show update]
   skip_before_action :authenticate_user!, only: %i[index show]
 
-  # Listagem de todos os Bots
-  def index
-    @bots = policy_scope(Bot).all.order(:created_at)
-  end
-
   # Lista um Bot
   def show
     authorize @bot
@@ -69,7 +64,7 @@ class BotsController < ApplicationController
 
   # Parametros necessarios para salvar um bot
   def bot_params
-    params.require(:bot).permit(:name, :photo)
+    params.require(:bot).permit(:name, :rich_introduction, :photo)
   end
 
   # Define um bot

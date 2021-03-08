@@ -12,31 +12,42 @@
               <div class="card-body custom-card-body">
                 <div class="d-flex justify-content-between"> 
                   <%= image_tag bot.photo, class: "custom-card-image" %>
+                  <% if !policy(@bots).edit? %>
+                    <div class="container-overlay-text">
+                      <div class="overlay-text">
+                        <%= bot.name %>
+                      </div>
+                    </div>
+                  <% end %>
                 </div>
                 <% if policy(@bots).edit? %>
                   <div class="text-center">
                     <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
                     <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
                   </div>
-                <% end %>  
+                <% end %>
               </div>
             </div>
           </a>
         </div>
       <% end %>
       <% if policy(@bots).new? %>
-      <div class="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-center mb-5 card-p-0">
+        
+
+              
+      <div class="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-center mb-5 card-p-0" 
+           onclick="window.location='<%= new_bot_path %>';"
+           style="cursor: pointer;" >
         <div class="card custom-card bordered-card">
-          <div class="card-body custom-card-body">
-            <% if policy(@bots).edit? %>
-              <div class="text-center">
-                <%= link_to "Criar bot", new_bot_path, class: "btn btn-primary text-white" %>
-              <% end %>
-              </div>
-            <% end %>  
+          <div class="d-flex justify-content-center align-items-center card-body custom-card-body bg-dark" style="font-size:70px;">
+            +
           </div>
         </div>
       </div>
+              
+
+            
+      <% end %>
     </div>
   </div>
 </div>
