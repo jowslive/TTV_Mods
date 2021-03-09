@@ -1,0 +1,26 @@
+/* Scrollbar Customizada */
+
+.scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #212529;
+	border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #212529;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, #9a7dc3),
+									   color-stop(0.72, #805fb4),
+									   color-stop(0.86, #6441a5));
+}
