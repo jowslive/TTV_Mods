@@ -6,4 +6,5 @@ class Bot < ApplicationRecord
   validates :name, presence: true
   validates :rich_introduction, presence: true
   validates :photo, presence: true
+  validates :documentation_url, presence: true
 end
