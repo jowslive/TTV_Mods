@@ -1,6 +1,6 @@
 <div class="menu-open">
   <% if @results.present? %>
-    <table class="table table-dark table-hover table-responsive table-bordered">
+    <table id="bot_configs_results" class="table table-dark table-hover table-responsive table-bordered">
       <thead>
         <tr style="vertical-align:middle;">
           <th scope="col" style="width:15%;">Bot</th>
@@ -45,3 +45,13 @@
     </h2>
   <% end %>
 </div>
+
+<script>
+  $('#bot_configs_results').DataTable({
+    "language": {
+      "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+    },
+    "paging": false,
+    "info": false
+  });
+</script>
