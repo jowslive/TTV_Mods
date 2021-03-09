@@ -1,9 +1,9 @@
 <div class="collapse custom-hamburger bg-dark w-20 show fade" id="navbarToggleExternalContent">
   <ul class="sidebar-nav" id="hamburgerBotsList">
     <li class="sidebar-brand">
-      <p class="text-white">
-        TTV Mods
-      </p>
+      <a class="text-white text-decoration-none" href=" <%= bots_path %> ">
+        Bots
+      </a>
     </li>
     <% @bots.each do |bot| %>
       <li>
