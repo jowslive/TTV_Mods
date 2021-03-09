@@ -33,33 +33,39 @@ streamelementsBot = Bot.new(name: "Stream Elements",
                rich_introduction: "StreamElements é a plataforma definitiva para streamers. 
                                    Possui uma potência de ferramentas interconectadas feitas para aprimorar sua stream. 
                                    StreamElements está na nuvem, então sua configuração de stream pode ser acessada de qualquer lugar ou qualquer dispositivo.", 
-                         user_id: u.id)
+                         user_id: u.id,
+               documentation_url: 'https://support.streamelements.com/hc/en-us/articles/115000373852-Chat-Commands-')
+                         
 streamelementsBot.save!
 priestBot = Bot.new(name: "Priestbot", 
                    photo: "https://i.imgur.com/JyfhY1A.jpg", 
        rich_introduction: "O PriestBot é o chatbot brasileiro de moderação desenvolvido para ser usado na Twitch.O suporte é feito tanto pela Twitch quanto pelo Discord.
                            Você precisa atender a pelo menos UM dos dois requisitos para a utilização deste bot. 
                            1- Média de 3+ viewers nos últimos 7 dias. Ter no mínimo 6 streams em 14 dias (sem reruns e testes).", 
-                 user_id: u.id)
+                 user_id: u.id,
+       documentation_url: 'https://docs.google.com/spreadsheets/d/1-C0_ddX3d8WawuIhFItaxQzOY7fCfkYnazZwYrQS5vY/edit#gid=634347005')
 priestBot.save!
 nightBot = Bot.new(name: "Nightbot", 
                   photo: "https://i.imgur.com/hWdObQT.jpg", 
       rich_introduction: "Nightbot é um bot de bate-papo para Twitch e YouTube que permite automatizar o bate-papo de sua transmissão ao vivo com moderação e novos recursos,
                           permitindo que você passe mais tempo entretendo seus espectadores.",
-                user_id: u.id)
+                user_id: u.id,
+      documentation_url: 'https://docs.nightbot.tv/commands/commandlist')
 nightBot.save!
 raidshieldBot = Bot.new(name: "Raid Shield Bot", 
                        photo: "https://i.imgur.com/OFVQPgL.jpg", 
 		       rich_introduction: "O raidshieldbot é uma ferramenta criada com o objetivo de proteger e monitorar canais da Twitch.tv. 
 															 O monitoramento é realizado com base em dados pré-existentes. 
 															 O bot automaticamente bane qualquer usuário que possa ter envolvimento com os ataques nocivos.",
-										 user_id: u.id)
+										 user_id: u.id,
+           documentation_url: 'https://docs.google.com/forms/d/e/1FAIpQLSc376IYSKjGNtRyTBxDaasL9ZA8OqgvVmMkw17s_7qoSGWiAw/viewform')
 raidshieldBot.save!
 mooBot = Bot.new(name: "Moobot", 
                 photo: "https://i.imgur.com/InmzpSl.png",
     rich_introduction: "Com apenas alguns cliques, o Moobot pode começar a automatizar várias tarefas tediosas para você, 
                         removendo comportamentos indesejáveis ​​no chat ​​e incentivando o envolvimento e a lealdade de sua comunidade no Twitch.",
-              user_id: u.id)
+              user_id: u.id,
+    documentation_url: 'https://moo.bot/docs/custom-twitch-bot-chat-commands/')
 mooBot.save!
 # --------------
 # CONFIGS

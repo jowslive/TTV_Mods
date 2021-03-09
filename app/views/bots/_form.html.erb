@@ -4,6 +4,7 @@
     <!-- <%= f.rich_text_area :rich_introduction, label: 'Introdução' %><br> -->
     <%= f.input :rich_introduction, as: :rich_text_area, label: 'Introdução', required: true %>
     <%= f.input :photo, label: 'Foto (URL)' %>
+    <%= f.input :documentation_url, label: 'Documentação (URL)' %>
     <%= link_to 'Back', bots_path, class: 'btn btn-primary' %>
     <%= f.submit class: 'btn btn-success' %>
   <% end %>
