@@ -21,9 +21,9 @@
                   <% end %>
                 </div>
                 <% if policy(@bots).edit? %>
-                  <div class="text-center">
-                    <%= link_to "✏️ Editar bot", edit_bot_path(bot.id) %>
-                    <%= link_to "🗑️ Excluir bot", bot_path(bot.id), method: 'delete', data: { confirm: 'Você tem certeza?' } %>
+                  <div class="text-center p-2">
+                    <%= link_to "✏️ Editar bot", edit_bot_path(bot.id), class: "text-decoration-none" %>
+                    <%= link_to "🗑️ Excluir bot", bot_path(bot.id), class: "text-decoration-none", method: 'delete', data: { confirm: 'Você tem certeza?' } %>
                   </div>
                 <% end %>
               </div>
@@ -32,21 +32,15 @@
         </div>
       <% end %>
       <% if policy(@bots).new? %>
-        
-
-              
-      <div class="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-center mb-5 card-p-0" 
-           onclick="window.location='<%= new_bot_path %>';"
-           style="cursor: pointer;" >
-        <div class="card custom-card bordered-card">
-          <div class="d-flex justify-content-center align-items-center card-body custom-card-body bg-dark" style="font-size:70px;">
-            +
+        <div class="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-center mb-5 card-p-0" 
+             onclick="window.location='<%= new_bot_path %>';"
+             style="cursor: pointer;">
+          <div class="card custom-card bordered-card">
+            <div class="d-flex justify-content-center align-items-center card-body custom-card-body bg-dark" style="font-size:70px;">
+              +
+            </div>
           </div>
         </div>
-      </div>
-              
-
-            
       <% end %>
     </div>
   </div>
