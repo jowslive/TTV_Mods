@@ -21,7 +21,7 @@
             <td><%= favorite.config.description %></td>
             <% if policy(favorite.config.bot).favorite? %>
               <td class="text-center" id="favorite-<%= favorite.config.id %>">
-                <%= link_to favorite_path(favorite), method: 'DELETE' do %>
+                <%= link_to favorite_path(favorite), method: 'DELETE', data: { confirm: 'Você tem certeza?' } do %>
                   <div class="HeartAnimation animate" ></div>
                 <% end %>
               </td>

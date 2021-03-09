@@ -17,19 +17,24 @@
   </div>
   <ul class="navbar-nav">
     <% if user_signed_in? %>
-      <li class="nav-item dropdown justify-content-end me-3">
-        <div class="btn-group dropstart">
-          <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= image_tag current_user.image, class: "avatar" %>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark position-absolute" aria-labelledby="navbarDropdown">
-            <%= link_to "Bots", bots_path, class: "dropdown-item" %>
-            <%= link_to "Favoritos", favorites_path, class: "dropdown-item" %>
-            <%= link_to "Usuários", users_path, class: "dropdown-item" %>
-            <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </ul>
-        </div>
-      </li>
+      <div class="d-flex">
+        <li class="nav-item mt-2 me-2">
+          <%= link_to "Favoritos ❤", favorites_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown justify-content-end me-3">
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= image_tag current_user.image, class: "avatar" %>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark position-absolute" aria-labelledby="navbarDropdown">
+              <%= link_to "Bots", bots_path, class: "dropdown-item" %>
+              <%= link_to "Favoritos", favorites_path, class: "dropdown-item" %>
+              <%= link_to "Usuários", users_path, class: "dropdown-item" %>
+              <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </ul>
+          </div>
+        </li>
+      </div>
     <% else %>
       <li class="nav-item py-2">
         <%= link_to user_twitch_omniauth_authorize_path, class: "btn custom-btn-purple text-white me-3", method: :post do %>
