@@ -5,6 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# --------------
+# LIMPANDO TUDO
+# --------------
+Favorite.destroy_all
+Config.destroy_all
+Bot.destroy_all
+User.destroy_all
+
+# --------------
+# USUÁRIOS
+# --------------
 u = User.new(email: "joao.brufatto@gmail.com", 
              password: Devise.friendly_token[0, 20], 
              nickname: "jows", 
@@ -30,7 +42,7 @@ a.save!
 # --------------
 streamelementsBot = Bot.new(name: "Stream Elements", 
                            photo: "https://i.imgur.com/rEJ8giw.png", 
-               rich_introduction: "StreamElements é a plataforma definitiva para streamers. 
+               rich_introduction: "StreamElements é a plataforma definitiva para streamers. <br>
                                    Possui uma potência de ferramentas interconectadas feitas para aprimorar sua stream. 
                                    StreamElements está na nuvem, então sua configuração de stream pode ser acessada de qualquer lugar ou qualquer dispositivo.", 
 							 documentation_url: "https://support.streamelements.com/hc/en-us/articles/115000373852-Chat-Commands-",
