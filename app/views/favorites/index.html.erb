@@ -1,14 +1,14 @@
 <div class="menu-open">
   <% if @favorites.present? %>
-    <table class="table table-dark table-hover table-responsive table-borderless rounded">
+    <table class="table table-dark table-hover table-responsive table-bordered">
       <thead>
         <tr>
-          <th scope="col" class="w-10">Bot</th>
-          <th scope="col" class="w-10">Nome</th>
+          <th scope="col" style="width:15%;">Bot</th>
+          <th scope="col" style="width:10%;">Nome</th>
           <th scope="col" style="width:30%;">Conteúdo</th>
-          <th scope="col" class="w-50">Descrição</th>
+          <th scope="col" style="width:40%;">Descrição</th>
           <% if policy(@favorites.first.config.bot).favorite? %>
-            <th scope="col" class="text-center">Favoritar</th>
+            <th scope="col" class="text-center" style="width:5%;">Favoritar</th>
           <% end %>
         </tr>
       </thead>
