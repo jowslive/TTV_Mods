@@ -12,7 +12,14 @@
                 </div>
                 <div class="text-container">
                   <h6><%= user.nickname %></h6>
-                  <p><i class="fab fa-twitch me-1"></i><%= user.view_count %></p>
+                  <div class="d-flex justify-content-center">
+                    <div class="me-3" title="Número de visualizações">
+                      <p><i class="fab fa-twitch me-1"></i><%= user.view_count %></p>
+                    </div>
+                    <div title="Número de favoritos na plataforma">
+                      <p><i class="fas fa-heart me-1"></i><%= user.favorites.count %></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
