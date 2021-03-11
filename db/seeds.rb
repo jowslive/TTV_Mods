@@ -45,9 +45,9 @@ streamelementsBot = Bot.new(name: "Stream Elements",
                rich_introduction: "StreamElements é a plataforma para streamers e possui uma variedade de ferramentas interconectadas feitas para aprimorar sua stream. 
                                    <br> Este bot está na nuvem, então sua configuração da stream pode ser acessada de qualquer lugar ou qualquer dispositivo. 
 																	 <br> <br> Para adicionar o bot ao seu canal: 
-																	 <h6> - Acesse o site do <a href='https://streamelements.com/' target='_blank'>StreamElements</a>, faça o login com a Twitch e após seguir os passos iniciais da plataforma você verá um botão <b>'ENTRAR NO CANAL'</b> no canto direito da tela.</h6>
+																	 <h6> - Acesse o site do <a href='https://streamelements.com/' class='text-decoration-none'>StreamElements</a>, faça o login com a Twitch e após seguir os passos iniciais da plataforma você verá um botão <b>'ENTRAR NO CANAL'</b> no canto direito da tela.</h6>
 																	 <br> Para adicionar comandos personalizados ao seu canal: 
-																	 <h6> - Acesse o <a href='https://streamelements.com/dashboard/bot-commands/custom-commands' target='_blank'>Dashboard</a>, clique no botão <b>'ADICIONAR NOVO COMANDO'</b> e preencha os dados.</h6>", 
+																	 <h6> - Acesse o <a href='https://streamelements.com/dashboard/bot-commands/custom-commands' class='text-decoration-none'>Dashboard</a>, clique no botão <b>'ADICIONAR NOVO COMANDO'</b> e preencha os dados.</h6>", 
 							 documentation_url: "https://support.streamelements.com/hc/en-us/articles/115000373852-Chat-Commands-",
                          user_id: u.id)
 streamelementsBot.save!
@@ -57,7 +57,7 @@ priestBot = Bot.new(name: "Priestbot",
                            <br> <br> <b> Você precisa atender a pelo menos UM dos dois requisitos para a utilização deste bot: </b>
                            <br> - Média de 3+ viewers nos últimos 7 dias ou ter no mínimo 6 streams em 14 dias (sem reruns e testes).
 													 <br> <br> Para adicionar o bot ao seu canal: 
-													 <h6> - Entre no <a href='https://bit.ly/PriestBotDiscord' target='_blank'>Discord do Priestbot</a> e envie uma mensagem na sala de texto <b>#solicitação-bot</b> seguindo as instruções fixadas no topo do canal.</h6>
+													 <h6> - Entre no <a href='https://bit.ly/PriestBotDiscord' class='text-decoration-none'>Discord do Priestbot</a> e envie uma mensagem na sala de texto <b>#solicitação-bot</b> seguindo as instruções fixadas no topo do canal.</h6>
 													 <br> Para adicionar comandos personalizados ao seu canal: 
 													 <h6> - No chat da sua live, digite !command add nome_comando frase_resposta. Exemplo: !command add Oi Olá, (_USER_).</h6>", 
 			 documentation_url: "https://docs.google.com/spreadsheets/d/1-C0_ddX3d8WawuIhFItaxQzOY7fCfkYnazZwYrQS5vY/edit#gid=634347005 </h6>",
@@ -68,9 +68,9 @@ nightBot = Bot.new(name: "Nightbot",
       rich_introduction: "Nightbot é um bot de bate-papo para Twitch e YouTube que permite automatizar o bate-papo de sua transmissão ao vivo com moderação e novos recursos,
                           permitindo que você passe mais tempo entretendo seus espectadores.
 													<br> <br> Para adicionar o bot ao seu canal: 
-													<h6> - Acesse o site do <a href='https://nightbot.tv/' target='_blank'>NightBot</a>, faça o login com a Twitch e clique no botão 'Join Channel' encontrado no topo do lado direito. </h6>
+													<h6> - Acesse o site do <a href='https://nightbot.tv/' class='text-decoration-none'>NightBot</a>, faça o login com a Twitch e clique no botão 'Join Channel' encontrado no topo do lado direito. </h6>
 													<br> Para adicionar comandos personalizados ao seu canal:
-													<h6> - Acesse o <a href='https://nightbot.tv/commands/custom' target='_blank'>Dashboard</a>, clique no botão 'Add Command' e preencha os dados.</h6>",
+													<h6> - Acesse o <a href='https://nightbot.tv/commands/custom' class='text-decoration-none'>Dashboard</a>, clique no botão 'Add Command' e preencha os dados.</h6>",
 			documentation_url: "https://docs.nightbot.tv/commands/commandlist",
                 user_id: u.id)
 nightBot.save!
@@ -80,7 +80,7 @@ raidshieldBot = Bot.new(name: "Raid Shield Bot",
 															 O monitoramento é realizado com base em dados pré-existentes. <br>
 															 O bot automaticamente bane qualquer usuário que possa ter envolvimento com os ataques nocivos.
 															 <br> <br> Para adicionar o bot ao seu canal:
-															 <h6> - Acesse o site do <a href='https://docs.google.com/forms/d/e/1FAIpQLSc376IYSKjGNtRyTBxDaasL9ZA8OqgvVmMkw17s_7qoSGWiAw/viewform' target='_blank'>RaidShieldBot</a> e preencha o formulário. </h6>
+															 <h6> - Acesse o site do <a href='https://docs.google.com/forms/d/e/1FAIpQLSc376IYSKjGNtRyTBxDaasL9ZA8OqgvVmMkw17s_7qoSGWiAw/viewform' class='text-decoration-none'>RaidShieldBot</a> e preencha o formulário. </h6>
 															 <br> Para adicionar comandos personalizados ao seu canal:
 															 <h6> - Não é possível adicionar comandos personalizados neste bot.</h6>",
 					 documentation_url: "https://docs.google.com/forms/d/e/1FAIpQLSc376IYSKjGNtRyTBxDaasL9ZA8OqgvVmMkw17s_7qoSGWiAw/viewform",
@@ -90,9 +90,9 @@ mooBot = Bot.new(name: "Moobot",
                 photo: "https://i.imgur.com/InmzpSl.png",
     rich_introduction: "Com apenas alguns cliques, o Moobot pode começar a automatizar várias tarefas tediosas para você, removendo comportamentos indesejáveis ​​no chat ​​e incentivando o envolvimento e a lealdade de sua comunidade no Twitch.
 												<br> <br> Para adicionar o bot ao seu canal: 
-												<h6> - Acesse o site do <a href='https://moo.bot/' target='_blank'>Moobot</a>, faça o login com a Twitch e clique no ícone <i class='fas fa-lg fa-fw fa-magic'></i>. </h6>
+												<h6> - Acesse o site do <a href='https://moo.bot/' class='text-decoration-none'>Moobot</a>, faça o login com a Twitch e clique no ícone <i class='fas fa-lg fa-fw fa-magic'></i>. </h6>
 												<br> Para adicionar comandos personalizados ao seu canal: 
-												<h6> - Acesse o <a href='https://moo.bot/' target='_blank'>Dashboard</a>, clique na aba 'Commands', depois no item da lista chamado 'Custom Commands' e preencha os dados.</h6>",
+												<h6> - Acesse o <a href='https://moo.bot/' class='text-decoration-none'>Dashboard</a>, clique na aba 'Commands', depois no item da lista chamado 'Custom Commands' e preencha os dados.</h6>",
     documentation_url: "https://moo.bot/docs/custom-twitch-bot-chat-commands/",
               user_id: u.id)
 mooBot.save!
