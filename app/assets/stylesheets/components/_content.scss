@@ -36,3 +36,10 @@
   text-justify: inter-word; 
   line-height: 34px;
 }
+
+.custom-text-purple {
+  color: #c9acff !important;
+  &:hover {
+    color: #9a72e6 !important;
+  }
+};

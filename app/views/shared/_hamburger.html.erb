@@ -14,7 +14,7 @@
                     bot_path(bot),
                     class: request.env["PATH_INFO"] == bot_path(bot).to_s ? "hamburgerHrefActive" : "hamburgerHref",
                     remote: false %>
-              <button class="accordion-button w-25 <%= request.env["PATH_INFO"] == bot_path(bot).to_s ? "" : "collapsed" %>" 
+              <button class="accordion-button custom-text-purple w-25 <%= request.env["PATH_INFO"] == bot_path(bot).to_s ? "" : "collapsed" %>" 
                       type="button"
                       data-bs-toggle="collapse" 
                       data-bs-target="#collapseBot<%= bot.id %>" 
@@ -28,13 +28,13 @@
               <div class="d-flex flex-column">
                 <%= link_to "Introdução", 
                     bot_path(bot, anchor: "bot_introduction"),
-                    class: "text-decoration-none",
+                    class: "custom-text-purple text-decoration-none",
                     remote: false %>
                 <%= link_to "Configurações", 
                     bot_path(bot, anchor: "bot_configs"),
-                    class: "text-decoration-none",
+                    class: "custom-text-purple text-decoration-none",
                     remote: false %>
-                <a href=" <%= bot.documentation_url %> " target="_blank" style="text-decoration:none;"> Documentação </a>
+                <a href=" <%= bot.documentation_url %> " target="_blank" class="text-decoration-none custom-text-purple"> Documentação </a>
               </div>
             </div>
           </div>
